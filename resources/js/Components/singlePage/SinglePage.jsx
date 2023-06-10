@@ -6,6 +6,11 @@ import "../home/mainContent/homes/style.css"
 import "./singlepage.css"
 import "../home/sideContent/side/side.css"
 import SinglePageSlider from "./slider/SinglePageSlider"
+import Slider from "react-slick";
+import { Button } from "@material-tailwind/react";
+import {
+  CloudArrowUpIcon,
+} from "@heroicons/react/24/outline";
 
 const SinglePage = () => {
   const { id } = useParams()
@@ -22,73 +27,28 @@ const SinglePage = () => {
     }
   }, [id]);
 
+   const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 2,
+    };
+
   return (
     <>
       {item ? (
         <main>
-          {/* <SinglePageSlider /> */}
-          <div className='container'>
-            <section className='mainContent details'>
-              <h1>Anaitwa Man Nzomo👀😂😂😂😂😂</h1>
-              <h1>kijana mpenda pombe👀😂😂😂😂😂</h1>
-              {/* <h1 className='title'>{item.title}</h1>
-
-              <div className='author'>
-                <span>by</span>
-                <img src={item.authorImg} alt='' />
-                <p> {item.authorName} on</p>
-                <label>{item.time}</label>
-              </div> */}
-
-     
-
-              {/* <div className='desctop'>
-                {item.desc.map((val) => {
-                  return (
-                    <>
-                      <p>{val.para1}</p>
-                      <p>{val.para2}</p>
-                    </>
-                  )
-                })}
-              </div>
-              <img src={item.cover} alt='' />
-              {item.desc.map((val) => (
-                <p>{val.para3}</p>
-              ))}
-
-              <div className='descbot'>
-                {item.details.map((data) => {
-                  return (
-                    <>
-                      <h1>{data.title}</h1>
-                      <p>{data.para1}</p>
-                    </>
-                  )
-                })}
-              </div>
-
-              <div className='quote'>
-                <i className='fa fa-quote-left'></i>
-                {item.details.map((data) => (
-                  <p>{data.quote}</p>
-                ))}
-              </div>
-
-              <div className='desctop'>
-                {item.details.map((data) => {
-                  return (
-                    <>
-                      <p>{data.para2}</p>
-                      <p>{data.para3}</p>
-                    </>
-                  )
-                })}
-              </div> */}
+          <div className='container m-10'>
+            <section className='mainContent details items-center m-20'>
+              <section className="w-50% m-20">
+                <SinglePageSlider />
+              </section>
+              <Button variant="gradient" className="flex items-center bg-sky-600 gap-3">
+                <CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Download
+                </Button>
             </section>
-            <section className='sideContent'>
-              {/* <Side /> */}
-            </section>
+ 
           </div>
         </main>
       ) : (
