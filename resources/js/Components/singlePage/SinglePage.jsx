@@ -8,16 +8,16 @@ import "../home/sideContent/side/side.css"
 import SinglePageSlider from "./slider/SinglePageSlider"
 
 const SinglePage = () => {
-  const { id } = useParams()
-  const [item, setItem] = useState(null)
+   const { id } = useParams();
+  const [item, setItem] = useState(() => {
+    const defaultItem = { title: "Default Title", authorName: "Default Author", /* ... */ };
+    const foundItem = hero.find((item) => item.id === parseInt(id));
+    return foundItem || defaultItem;
+  });
 
-  useEffect(() => {
-    const item = hero.find((item) => item.id === parseInt(id))
-    window.scrollTo(0, 0)
-    if (item) {
-      setItem(item)
-    }
-  }, [id])
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   return (
     <>
