@@ -17,22 +17,22 @@ const SinglePageSlider = (props) => {
             <Carousel {...settings}>
                 <Wrap>
                     <a>
-                        <img src="/images/fashion/7.jpg" alt="Slider" />
+                        <img className="h-96 w-full object-contain" src="/images/fashion/7.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img src="/images/fashion/g.jpg" alt="Slider" />
+                        <img className="h-96 w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img src="/images/fashion/g.jpg" alt="Slider" />
+                        <img className="h-96 w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img src="/images/fashion/g.jpg" alt="Slider" />
+                        <img className="h-96 w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
             </Carousel>
@@ -89,8 +89,8 @@ const Wrap = styled.div`
         padding: 4px;
 
         img {
-            width: 100%;
-            height: 50%;
+            // width: 100%;
+            // height: 50%;
         }
         &:hover {
             padding: 0;

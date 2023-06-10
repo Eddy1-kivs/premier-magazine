@@ -40,8 +40,8 @@ const SinglePage = () => {
       {item ? (
         <main>
           <div className='container m-10'>
-            <section className='mainContent details items-center m-20'>
-              <section className="w-50% m-20">
+            <section className='mainContent details items-center'>
+              <section className="mb-20">
                 <SinglePageSlider />
               </section>
               <Button variant="gradient" className="flex items-center bg-sky-600 gap-3">
