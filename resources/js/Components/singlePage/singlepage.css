@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 main {
   margin-top: 50px;
+  margin: 100px;
 }
 .details {
   padding-right: 50px;
@@ -66,5 +70,24 @@ main {
   }
   .details img {
     width: 100%;
+  }
+}
+
+/*----------gallery----------*/
+.gallery .img {
+  width: 315px;
+  height: 200px;
+}
+.gallery img {
+  width: 315px;
+  height: 200px;
+  object-fit: cover;
+}
+/*----------gallery----------*/
+@media screen and (max-width: 768px) {
+  .gallery img,
+  .gallery .img {
+    width: 100%;
+    height: 400px;
   }
 }

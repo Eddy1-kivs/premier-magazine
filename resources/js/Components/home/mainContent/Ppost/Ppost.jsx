@@ -12,6 +12,7 @@ const Ppost = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
+     autoplay: true,
   }
   return (
     <>
