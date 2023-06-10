@@ -5,7 +5,7 @@ import Heading from "../../../common/heading/Heading";
 import "./ppost.css";
 
 // copy same code of popular
-const Ppost = () => {
+const Ppost = (props) => {
     const settings = {
         dots: false,
         infinite: true,
@@ -20,9 +20,9 @@ const Ppost = () => {
                 <Heading title="Popular Posts" />
                 <div className="content">
                     <Slider {...settings} className="flex justify-center">
-                        {ppost.map((val) => {
+                        {props.data.map((val, index) => {
                             return (
-                                <div className="items">
+                                <div className="items" key={index}>
                                     <div className="box shadow">
                                         <div className="images">
                                             <div className="img">

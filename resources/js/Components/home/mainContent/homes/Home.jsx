@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Discover from "../../discover/Discover";
 import Side from "../../sideContent/side/Side";
 import Life from "../life/Life";
@@ -7,17 +7,18 @@ import Popular from "../popular/Popular";
 import Ppost from "../Ppost/Ppost";
 import "./style.css";
 
-const Homes = () => {
+const Homes = (props) => {
     return (
         <>
             <main>
                 <div className="">
-                    <div className="flex flex-col md:flex-row">
+                    <div className="flex flex-col md:px-16 md:flex-row">
                         <section className="mainContent">
                             {/* <Popular /> */}
                             <div className="pl-4 ">
-                                <Ppost />
-                                <Life />
+                                <Ppost data={props.data.popular} />
+                                {/* {console.log(props.data)} */}
+                                <Life data={props.data.forYou} />
                             </div>
                             {/* <Music /> */}
                         </section>

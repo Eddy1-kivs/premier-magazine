@@ -4,11 +4,11 @@ import Hero from "./hero/Hero";
 import Homes from "./mainContent/homes/Home";
 import Ppost from "./mainContent/Ppost/Ppost";
 
-const Homepages = () => {
+const Homepages = (props) => {
     return (
         <>
-            <Hero />
-            <Homes />
+            <Hero data={props.data} />
+            <Homes data={props.data} />
             {/* <Discover /> */}
         </>
     );

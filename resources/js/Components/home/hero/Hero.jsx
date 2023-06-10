@@ -3,14 +3,14 @@ import { hero } from "../../../dummyData";
 import "./hero.css";
 import Card from "./Card";
 
-const Hero = () => {
+const Hero = (props) => {
     const [items, setIems] = React.useState(hero);
 
     return (
         <>
             <section className="hero">
                 <div className="container">
-                    {items.map((item) => {
+                    {props.data.hero.map((item) => {
                         return (
                             <>
                                 <Card key={item.id} item={item} />
