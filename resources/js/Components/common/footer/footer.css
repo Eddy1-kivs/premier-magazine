@@ -48,7 +48,7 @@ footer ul li span::before {
 }
 .legal {
   padding: 15px;
-  background-color: #000;
+  background-color: grey;
   color: grey;
   border-top: 2px solid rgba(255, 255, 255, 0.3);
 }

@@ -8,51 +8,41 @@ import "../home/sideContent/side/side.css"
 import SinglePageSlider from "./slider/SinglePageSlider"
 
 const SinglePage = () => {
-   const { id } = useParams();
-  const [item, setItem] = useState(() => {
-    const defaultItem = { title: "Default Title", authorName: "Default Author", /* ... */ };
-    const foundItem = hero.find((item) => item.id === parseInt(id));
-    return foundItem || defaultItem;
-  });
+  const { id } = useParams()
+  const [item, setItem] = useState(null)
 
-    useEffect(() => {
+  useEffect(() => {
+    const item = hero.find((item) => item.id === parseInt(id));
     window.scrollTo(0, 0);
+    if (item) {
+      setItem(item);
+    } else {
+      // Set a default item if no matching item is found
+      setItem({ title: "Default Title", authorName: "Default Author", /* ... */ });
+    }
   }, [id]);
 
   return (
     <>
       {item ? (
         <main>
-          <SinglePageSlider />
+          {/* <SinglePageSlider /> */}
           <div className='container'>
             <section className='mainContent details'>
-              <h1 className='title'>{item.title}</h1>
+              <h1>Anaitwa Man Nzomo👀😂😂😂😂😂</h1>
+              <h1>kijana mpenda pombe👀😂😂😂😂😂</h1>
+              {/* <h1 className='title'>{item.title}</h1>
 
               <div className='author'>
                 <span>by</span>
                 <img src={item.authorImg} alt='' />
                 <p> {item.authorName} on</p>
                 <label>{item.time}</label>
-              </div>
+              </div> */}
 
-              <div className='social'>
-                <div className='socBox'>
-                  <i className='fab fa-facebook-f'></i>
-                  <span>SHARE</span>
-                </div>
-                <div className='socBox'>
-                  <i className='fab fa-twitter'></i>
-                  <span>TWITTER</span>
-                </div>
-                <div className='socBox'>
-                  <i className='fab fa-pinterest'></i>
-                </div>
-                <div className='socBox'>
-                  <i className='fa fa-envelope'></i>
-                </div>
-              </div>
+     
 
-              <div className='desctop'>
+              {/* <div className='desctop'>
                 {item.desc.map((val) => {
                   return (
                     <>
@@ -94,10 +84,10 @@ const SinglePage = () => {
                     </>
                   )
                 })}
-              </div>
+              </div> */}
             </section>
             <section className='sideContent'>
-              <Side />
+              {/* <Side /> */}
             </section>
           </div>
         </main>

@@ -39,7 +39,7 @@ const Popular = () => {
                                 <div className="items bg-white">
                                     <div className="box shadow">
                                         <div className="images row">
-                                            <div className="img">
+                                            <div className="img object-contain">
                                                 <img src={val.cover} alt="" />
                                             </div>
                                             <div class="category category1">
@@ -47,12 +47,12 @@ const Popular = () => {
                                             </div>
                                         </div>
                                         <div className="text row bg-slate-400">
-                                            <h1 className="title">
+                                            <h1 className="title text-black">
                                                 {val.title.slice(0, 40)}...
                                             </h1>
                                             <div className="date">
                                                 <i class="fas fa-calendar-days"></i>
-                                                <label>{val.date}</label>
+                                                <label className="text-white">{val.date}</label>
                                             </div>
                                             <div className="comment">
                                                 <i class="fas fa-comments"></i>

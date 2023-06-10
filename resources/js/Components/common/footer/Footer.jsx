@@ -4,8 +4,8 @@ import "./footer.css";
 const Footer = () => {
     return (
         <>
-            <footer>
-                <div className="container">
+            <footer className="bg-slate-400">
+                <div className="container bg-slate-400">
                     <div className="box logo">
                         <img
                             src="../images/fashion/logo.png"
@@ -22,7 +22,7 @@ const Footer = () => {
                         <span> +91 60521488</span>
                     </div>
                     <div className="box">
-                        <h3>SPORT</h3>
+                        <h3 className="text-black">fashion</h3>
                         <div className="item">
                             <img src="../images/hero/hero1.jpg" alt="" />
                             <p>Google To Boost Android Security In Few Days</p>
@@ -33,7 +33,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="box">
-                        <h3>CRICKET</h3>
+                        <h3 className="text-black">Adult life</h3>
                         <div className="item">
                             <img src="../images/hero/hero3.jpg" alt="" />
                             <p>
@@ -49,29 +49,27 @@ const Footer = () => {
                             </p>
                         </div>
                     </div>
-                    {/* <div className='box'>
-            <h3>LABELS</h3>
-            <i className='fa fa-chevron-right'></i>
+                    <div className='box'>
+            <h3 className="text-black">Media</h3>
+            
             <ul>
               <li>
-                <span>Boxing</span> <label>(5)</label>
+                <a href="https://instagram.com/premier_magazine23?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
+                    <img className="h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png?20210403190622" />
+                </a>
               </li>
               <li>
-                <span>Fashion</span> <label>(6)</label>
-              </li>
-              <li>
-                <span>Health</span> <label>(7)</label>
-              </li>
-              <li>
-                <span>Nature</span> <label>(9)</label>
+                 <a href="https://wa.me/message/2GEHRKNLDCHRD1" target="_blank">
+                    <img className="h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png?20220228223904" />
+                </a>
               </li>
             </ul>
-          </div> */}
+          </div>
                 </div>
             </footer>
-            <div className="legal  ">
+            <div className="legal bg-slate-400 ">
                 <div className="container flexSB">
-                    <p>© all rights reserved</p>
+                    <p className="text-black">© all rights reserved</p>
                     {/* <p>
             made with <i className='fa fa-heart'></i> by gorkhcoder
           </p> */}

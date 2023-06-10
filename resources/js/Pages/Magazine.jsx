@@ -1,5 +1,5 @@
 import React from "react";
-import SinglePage from "@/components/singlePage/SinglePage";
+import SinglePage from "@/Components/singlePage/SinglePage";
 
 export default function Magazine(props) {
     return (
