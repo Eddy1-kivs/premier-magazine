@@ -11,36 +11,36 @@ const SinglePageSlider = (props) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-    }
+    };
     return (
-      <>
+        <>
             <Carousel {...settings}>
                 <Wrap>
                     <a>
-                        <img src='../images/fashion/7.jpg' alt='Slider' />
+                        <img src="/images/fashion/7.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img src='../images/fashion/g.jpg' alt='Slider' />
+                        <img src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img src='../images/fashion/g.jpg' alt='Slider' />
+                        <img src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img src='../images/fashion/g.jpg' alt='Slider' />
+                        <img src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
             </Carousel>
-            </>
+        </>
     );
 };
 
-const Carousel= styled(Slider)`
+const Carousel = styled(Slider)`
     margin-top: 20px;
 
     & > button {
@@ -82,7 +82,7 @@ const Wrap = styled.div`
     a {
         border-radius: 4px;
         box-shadow: rgb(0 0 0 /69%) 0px 26px 30px -10px,
-         rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+            rgb(0 0 0 / 73%) 0px 16px 10px -10px;
         cursor: pointer;
         display: block;
         position: relative;

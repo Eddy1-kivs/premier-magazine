@@ -11,16 +11,20 @@ const Homes = () => {
     return (
         <>
             <main>
-                <div className="container">
-                    <section className="mainContent">
-                        <Popular />
-                        <Ppost />
-                        <Life />
-                        {/* <Music /> */}
-                    </section>
-                    <section className="sideContent">
-                        <Side />
-                    </section>
+                <div className="">
+                    <div className="flex flex-col md:flex-row">
+                        <section className="mainContent">
+                            {/* <Popular /> */}
+                            <div className="pl-4 ">
+                                <Ppost />
+                                <Life />
+                            </div>
+                            {/* <Music /> */}
+                        </section>
+                        <section className="sideContent sticky px-4">
+                            <Side />
+                        </section>
+                    </div>
                 </div>
             </main>
         </>

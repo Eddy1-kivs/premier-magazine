@@ -10,7 +10,7 @@ export default function Magazine(props) {
             <div className="overflow-hidden">
                 <SinglePage></SinglePage>
             </div>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
     );
 }
