@@ -1,33 +1,39 @@
-import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { useEffect } from "react";
+import GuestLayout from "@/Layouts/GuestLayout";
+import InputError from "@/Components/InputError";
+import InputLabel from "@/Components/InputLabel";
+import PrimaryButton from "@/Components/PrimaryButton";
+import TextInput from "@/Components/TextInput";
+import { Head, Link, useForm } from "@inertiajs/react";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: '',
+        name: "",
+        email: "",
+        phone: "",
+        password: "",
+        password_confirmation: "",
     });
 
     useEffect(() => {
         return () => {
-            reset('password', 'password_confirmation');
+            reset("password", "password_confirmation");
         };
     }, []);
 
     const handleOnChange = (event) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
+        setData(
+            event.target.name,
+            event.target.type === "checkbox"
+                ? event.target.checked
+                : event.target.value
+        );
     };
 
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'));
+        post(route("register"));
     };
 
     return (
@@ -46,7 +52,6 @@ export default function Register() {
                         autoComplete="name"
                         isFocused={true}
                         onChange={handleOnChange}
-                        required
                     />
 
                     <InputError message={errors.name} className="mt-2" />
@@ -63,10 +68,25 @@ export default function Register() {
                         className="mt-1 block w-full"
                         autoComplete="username"
                         onChange={handleOnChange}
-                        required
                     />
 
                     <InputError message={errors.email} className="mt-2" />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="phone" value="Phone" />
+
+                    <TextInput
+                        id="phone"
+                        type="text"
+                        name="phone"
+                        value={data.phone}
+                        className="mt-1 block w-full"
+                        autoComplete="phone"
+                        onChange={handleOnChange}
+                    />
+
+                    <InputError message={errors.phone} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
@@ -80,14 +100,16 @@ export default function Register() {
                         className="mt-1 block w-full"
                         autoComplete="new-password"
                         onChange={handleOnChange}
-                        required
                     />
 
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
+                    <InputLabel
+                        htmlFor="password_confirmation"
+                        value="Confirm Password"
+                    />
 
                     <TextInput
                         id="password_confirmation"
@@ -97,15 +119,17 @@ export default function Register() {
                         className="mt-1 block w-full"
                         autoComplete="new-password"
                         onChange={handleOnChange}
-                        required
                     />
 
-                    <InputError message={errors.password_confirmation} className="mt-2" />
+                    <InputError
+                        message={errors.password_confirmation}
+                        className="mt-2"
+                    />
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
                     <Link
-                        href={route('login')}
+                        href={route("login")}
                         className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                     >
                         Already registered?

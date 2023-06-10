@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan;
+use App\Models\Payment;
 use App\Models\User;
+use Daraja as Mpesa;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
@@ -27,14 +29,25 @@ class PlanController extends Controller
 
     public function subscribe(Request $request)
     {
+$registerUrlsResponse=Mpesa::c2bRegisterUrls();
+$simulateResponse=Mpesa::simulateC2B(100, "254708374149", $request->id());
         $this->setPlan($request);
+
     }
 
-    private function setPlan($request)
+    public function confirm(Request $request){
+        $this->setPlan($request->BillRefNumber);
+        $authUser =  User::find(auth()->id())->payments()->create([
+            'currency'=>'KES',
+            'amount'=>$request->TransAmount,
+            'payment_method'=>'SAFARICOM MPESA',
+        ]);
+    }
+
+    private function setPlan($id)
     {
         $authUser = User::find(auth()->id());
         $authUser->plans()->detach();
-        $authUser->plans()->attach($request->id);
-        // dd($request->all());
+        $authUser->plans()->attach($id);
     }
 }

@@ -168,7 +168,6 @@ return [
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
-        \Safaricom\Mpesa\MpesaServiceProvider::class,
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
@@ -188,8 +187,10 @@ return [
          */
 
         /*
-         * Application Service Providers...
+        * Application Service Providers...
          */
+        // Gathuku\Mpesa\MpesaServiceProvider::class,
+        \Safaricom\Mpesa\MpesaServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -213,6 +214,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Daraja' => Gathuku\Mpesa\Facades\Mpesa::class,
+
         'Mpesa'=> \Safaricom\Mpesa\MpesaServiceProvider::class
     ])->toArray(),
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Plan::class);
             $table->foreignIdFor(User::class);
+            $table->timestamp('expiry');
             $table->timestamps();
         });
     }

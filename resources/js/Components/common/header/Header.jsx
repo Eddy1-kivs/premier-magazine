@@ -12,6 +12,7 @@ const Header = () => {
 
         { title: "Pricing", url: "/plans/pricing" },
         { title: "Contact us", url: "/contact" },
+        { title: "Profile", url: "/profile" },
     ];
 
     return (
