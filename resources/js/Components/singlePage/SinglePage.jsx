@@ -9,7 +9,7 @@ import SinglePageSlider from "./slider/SinglePageSlider"
 import Slider from "react-slick";
 import { Button } from "@material-tailwind/react";
 import {
-  CloudArrowUpIcon,
+  CloudArrowDownIcon,
 } from "@heroicons/react/24/outline";
 
 const SinglePage = () => {
@@ -39,13 +39,13 @@ const SinglePage = () => {
     <>
       {item ? (
         <main>
-          <div className='container m-10'>
+          <div className='container m-10 items-center'>
             <section className='mainContent details items-center'>
               <section className="mb-20">
                 <SinglePageSlider />
               </section>
               <Button variant="gradient" className="flex items-center bg-sky-600 gap-3">
-                <CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Download
+                <CloudArrowDownIcon strokeWidth={2} className="h-5 w-5" /> Download
                 </Button>
             </section>
  

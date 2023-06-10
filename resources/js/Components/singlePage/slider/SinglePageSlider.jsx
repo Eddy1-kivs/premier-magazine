@@ -17,22 +17,22 @@ const SinglePageSlider = (props) => {
             <Carousel {...settings}>
                 <Wrap>
                     <a>
-                        <img className="h-96 w-full object-contain" src="/images/fashion/7.jpg" alt="Slider" />
+                        <img className="max-h-[700px] min-h-[600px] w-full object-contain" src="/images/fashion/7.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img className="h-96 w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
+                        <img className="max-h-[700px] min-h-[600px] w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img className="h-96 w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
+                        <img className="max-h-[700px] min-h-[600px] w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
                 <Wrap>
                     <a>
-                        <img className="h-96 w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
+                        <img className="max-h-[700px] min-h-[600px] w-full object-contain" src="/images/fashion/g.jpg" alt="Slider" />
                     </a>
                 </Wrap>
             </Carousel>
@@ -47,6 +47,7 @@ const Carousel = styled(Slider)`
         opacity: 0;
         height: 100%;
         width: 5vw;
+        position
         z-index: 1;
 
         &:hover {
@@ -81,8 +82,7 @@ const Wrap = styled.div`
 
     a {
         border-radius: 4px;
-        box-shadow: rgb(0 0 0 /69%) 0px 26px 30px -10px,
-            rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+        
         cursor: pointer;
         display: block;
         position: relative;
@@ -94,7 +94,7 @@ const Wrap = styled.div`
         }
         &:hover {
             padding: 0;
-            border: 4px solid rgba(249, 249, 249, 0.8);
+            // border: 4px solid rgba(249, 249, 249, 0.8);
             transition-duration: 300ms;
         }
     }
