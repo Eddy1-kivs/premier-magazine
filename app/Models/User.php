@@ -33,6 +33,10 @@ class User extends \TCG\Voyager\Models\User
         'remember_token',
     ];
 
+    public function plans(){
+        return $this->belongsToMany(Plan::class);
+    }
+
     /**
      * The attributes that should be cast.
      *

@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Subscribe from "@/Components/Pricing/pricing";
-export default function Pricing() {
+
+import SnackbarProvider from "react-simple-snackbar";
+export default function Pricing(props) {
+    useEffect(() => {
+        // console.log(props);
+    });
     return (
-        <div>
-            <Subscribe></Subscribe>
-        </div>
+        <SnackbarProvider>
+            <div className="bg-gray-50">
+                <Subscribe plans={props.plans}></Subscribe>
+            </div>
+        </SnackbarProvider>
     );
 }

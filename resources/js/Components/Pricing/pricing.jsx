@@ -1,233 +1,119 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
+import { router } from "@inertiajs/react";
 
-const Pricing = () => {
+const Pricing = (props) => {
+    const subscribe = (plan) => {
+        router.post("/plans/subscribe", plan, {
+            preserveScroll: true,
+            preserveState: true,
+        });
+    };
     return (
         <>
             <Header></Header>
-            <section className=" pt-28 bg-gray-400 h-full pb-48  w-full">
-                <div className=" w-full h-full bg-gray-400">
-                    <body className="font-sans bg-gray-400 h-fit w-full">
-                        <div className="min-h-screen flex justify-center items-center">
-                            <div className="">
-                                <div className="text-center font-semibold">
-                                    <h1 className="text-5xl">
-                                        <span className="text-blue-700 tracking-wide">
-                                            Flexible{" "}
-                                        </span>
-                                        <span>Plans</span>
-                                    </h1>
-                                    <p className="pt-6 text-xl text-gray-400 font-normal w-full px-8 md:w-full">
-                                        Choose a plan that works best for you
-                                        and
-                                        <br /> your team.
-                                    </p>
+            <div class="relative w-full h-full">
+                <div class="absolute hidden w-full  lg:block h-96" />
+                <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+                        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                            <span class="relative inline-block">
+                                <svg
+                                    viewBox="0 0 52 24"
+                                    fill="currentColor"
+                                    class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                                >
+                                    <defs>
+                                        <pattern
+                                            id="2c67e949-4a23-49f7-bf27-ca140852cf21"
+                                            x="0"
+                                            y="0"
+                                            width=".135"
+                                            height=".30"
+                                        >
+                                            <circle cx="1" cy="1" r=".7" />
+                                        </pattern>
+                                    </defs>
+                                    <rect
+                                        fill="url(#2c67e949-4a23-49f7-bf27-ca140852cf21)"
+                                        width="52"
+                                        height="24"
+                                    />
+                                </svg>
+                                <span class="relative">Affordable</span>
+                            </span>{" "}
+                            for everyone
+                        </h2>
+                        <p class="text-base text-gray-700 md:text-lg">
+                            Sed ut perspiciatis unde omnis iste natus error sit
+                            voluptatem accusantium doloremque rem aperiam, eaque
+                            ipsa quae.
+                        </p>
+                    </div>
+                    <div class="grid max-w-screen-md gap-10 md:grid-cols-2 sm:mx-auto">
+                        {props.plans.map((plan, index) => (
+                            <div>
+                                <div class="p-8 bg-gray-900 rounded">
+                                    <div class="mb-4 text-center">
+                                        <p class="text-xl font-medium tracking-wide text-white">
+                                            {plan.display_name}
+                                        </p>
+                                        <div class="flex items-center justify-center">
+                                            <p class="mr-2 text-5xl font-semibold text-white lg:text-4xl">
+                                                {plan.display_price}
+                                            </p>
+                                            <p class="text-lg text-gray-500">
+                                                / {plan.display_period}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <ul class="mb-8 space-y-2 flex flex-col justify-center w-full">
+                                        {plan.features.map((feature, index) => (
+                                            <li class="flex items-center">
+                                                <div class="mr-3">
+                                                    <svg
+                                                        class="w-4 h-4 text-teal-accent-400"
+                                                        viewBox="0 0 24 24"
+                                                        strokeLinecap="round"
+                                                        strokeWidth="2"
+                                                    >
+                                                        <circle
+                                                            cx="12"
+                                                            cy="12"
+                                                            fill="green"
+                                                            r="11"
+                                                            stroke="currentColor"
+                                                        />
+                                                        {/* <polyline
+                                                            fill="red"
+                                                            stroke="currentColor"
+                                                            points="6,12 10,16 18,8"
+                                                        /> */}
+                                                    </svg>
+                                                </div>
+                                                <p class="font-medium text-gray-300">
+                                                    {feature}
+                                                </p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <button
+                                        onClick={() => subscribe(plan)}
+                                        // type="button"
+                                        class="inline-flex items-center bg-blue-600  justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                    >
+                                        Get Now
+                                    </button>
                                 </div>
-                                <div className="pt-24 flex flex-row">
-                                    {/* <!-- Basic Card --> */}
-                                    <div className="w-96 p-8 bg-white text-center rounded-3xl pr-16 shadow-xl">
-                                        <h1 className="text-black font-semibold text-2xl">
-                                            Basic
-                                        </h1>
-                                        <p className="pt-2 tracking-wide">
-                                            <span className="text-gray-400 align-top">
-                                                ${" "}
-                                            </span>
-                                            <span className="text-3xl font-semibold">
-                                                10
-                                            </span>
-                                            <span className="text-gray-400 font-medium">
-                                                / user
-                                            </span>
-                                        </p>
-                                        <hr className="mt-4 border-1"></hr>
-                                        <div className="pt-8">
-                                            <p className="font-semibold text-gray-400 text-left">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    Get started with{" "}
-                                                    <span className="text-black">
-                                                        messaging
-                                                    </span>
-                                                </span>
-                                            </p>
-                                            <p className="font-semibold text-gray-400 text-left pt-5">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    Flexible{" "}
-                                                    <span className="text-black">
-                                                        team meetings
-                                                    </span>
-                                                </span>
-                                            </p>
-                                            <p className="font-semibold text-gray-400 text-left pt-5">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    <span className="text-black">
-                                                        5 TB
-                                                    </span>{" "}
-                                                    cloud storage
-                                                </span>
-                                            </p>
-
-                                            <a href="#" className="">
-                                                <p className="w-full py-4 bg-blue-600 mt-8 rounded-xl text-white">
-                                                    <span className="font-medium">
-                                                        Choose Plan
-                                                    </span>
-                                                    <span className="pl-2 material-icons align-middle text-sm">
-                                                        east
-                                                    </span>
-                                                </p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    {/* <!-- StartUp Card --> */}
-                                    <div className="w-80 p-8 bg-gray-900 text-center rounded-3xl text-white border-4 shadow-xl border-white transform scale-125">
-                                        <h1 className="text-white font-semibold text-2xl">
-                                            Startup
-                                        </h1>
-                                        <p className="pt-2 tracking-wide">
-                                            <span className="text-gray-400 align-top">
-                                                ${" "}
-                                            </span>
-                                            <span className="text-3xl font-semibold">
-                                                24
-                                            </span>
-                                            <span className="text-gray-400 font-medium">
-                                                / user
-                                            </span>
-                                        </p>
-                                        <hr className="mt-4 border-1 border-gray-600"></hr>
-                                        <div className="pt-8">
-                                            <p className="font-semibold text-gray-400 text-left">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    All features in{" "}
-                                                    <span className="text-white">
-                                                        Basic
-                                                    </span>
-                                                </span>
-                                            </p>
-                                            <p className="font-semibold text-gray-400 text-left pt-5">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    Flexible{" "}
-                                                    <span className="text-white">
-                                                        call scheduling
-                                                    </span>
-                                                </span>
-                                            </p>
-                                            <p className="font-semibold text-gray-400 text-left pt-5">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    <span className="text-white">
-                                                        15 TB
-                                                    </span>{" "}
-                                                    cloud storage
-                                                </span>
-                                            </p>
-
-                                            <a href="#" className="">
-                                                <p className="w-full py-4 bg-blue-600 mt-8 rounded-xl text-white">
-                                                    <span className="font-medium">
-                                                        Choose Plan
-                                                    </span>
-                                                    <span className="pl-2 material-icons align-middle text-sm">
-                                                        east
-                                                    </span>
-                                                </p>
-                                            </a>
-                                        </div>
-                                        <div className="absolute top-4 right-4">
-                                            <p className="bg-blue-700 font-semibold px-4 py-1 rounded-full uppercase text-xs">
-                                                Popular
-                                            </p>
-                                        </div>
-                                    </div>
-                                    {/* <!-- Enterprise Card --> */}
-                                    <div className="w-96 p-8 bg-white text-center rounded-3xl pl-16 shadow-xl">
-                                        <h1 className="text-black font-semibold text-2xl">
-                                            Enterprise
-                                        </h1>
-                                        <p className="pt-2 tracking-wide">
-                                            <span className="text-gray-400 align-top">
-                                                ${" "}
-                                            </span>
-                                            <span className="text-3xl font-semibold">
-                                                35
-                                            </span>
-                                            <span className="text-gray-400 font-medium">
-                                                / user
-                                            </span>
-                                        </p>
-                                        <hr className="mt-4 border-1"></hr>
-                                        <div className="pt-8">
-                                            <p className="font-semibold text-gray-400 text-left">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    All features in{" "}
-                                                    <span className="text-black">
-                                                        Startup
-                                                    </span>
-                                                </span>
-                                            </p>
-                                            <p className="font-semibold text-gray-400 text-left pt-5">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    Growth{" "}
-                                                    <span className="text-black">
-                                                        oriented
-                                                    </span>
-                                                </span>
-                                            </p>
-                                            <p className="font-semibold text-gray-400 text-left pt-5">
-                                                <span className="material-icons align-middle">
-                                                    done
-                                                </span>
-                                                <span className="pl-2">
-                                                    <span className="text-black">
-                                                        Unlimited
-                                                    </span>{" "}
-                                                    cloud storage
-                                                </span>
-                                            </p>
-
-                                            <a href="#" className="">
-                                                <p className="w-full py-4 bg-blue-600 mt-8 rounded-xl text-white">
-                                                    <span className="font-medium">
-                                                        Choose Plan
-                                                    </span>
-                                                    <span className="pl-2 material-icons align-middle text-sm">
-                                                        east
-                                                    </span>
-                                                </p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
+                                <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
+                                <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
                             </div>
-                        </div>
-                    </body>
+                        ))}
+                    </div>
                 </div>
-            </section>
+            </div>
 
             <Footer></Footer>
         </>
