@@ -41,7 +41,7 @@ const SinglePageSlider = (props) => {
 };
 
 const Carousel = styled(Slider)`
-    margin-top: 20px;
+    margin-top: 1px;
 
     & > button {
         opacity: 0;
@@ -79,6 +79,8 @@ const Wrap = styled.div`
     border-radius: 4px;
     cursor: pointer;
     position: relative;
+    align-items: center;
+    justify-content: center;
 
     a {
         border-radius: 4px;
